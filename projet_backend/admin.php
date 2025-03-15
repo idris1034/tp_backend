@@ -101,6 +101,7 @@
                 echo "<td class='espace'><a id='mod' href='modifier.php?id=".$row['id']."'><img src='icons8-edit-100.png' alt='Edit'></a> <a id='sup' href='admin.php?sup_id=".$row['id']."'><img src='icons8-delete-60.png' alt='Delete'></a></td>";
                 echo "</tr>";
             }
+            mysqli_close($conn);
         ?>
     </table>
 </body>
