@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 12 mars 2025 à 13:17
+-- Généré le : dim. 16 mars 2025 à 17:47
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -41,16 +41,11 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `login`, `password`, `profile`) VALUES
-(3, 'sow', 'idriss', 'hacker', '63c5902ca4fd118ae5353ecd89df57c6', 'repprofile/Capture d’écran (1).png'),
-(8, 'diallo', 'moussa', 'groupe', 'e7247759c1633c0f9f1485f3690294a9', 'repprofile/Capture d’écran (3).png'),
-(9, 'gueye', 'mame cheikh', 'Shota', 'e7247759c1633c0f9f1485f3690294a9', 'repprofile/Capture d’écran (22).png'),
-(11, 'sarr', 'fatou', 'tifa', '5d41402abc4b2a76b9719d911017c592', 'repprofile/VirtualBox_UBUNTU_28_01_2025_22_07_42.p'),
-(12, 'ndiaye', 'mohamed', 'mhd', '721a9b52bfceacc503c056e3b9b93cfa', 'repprofile/Capture d’écran (17).png'),
-(13, 'diop', 'mouhamed', 'prof', '3817848ef191468810fc4b1cfc855ba1', 'repprofile/VirtualBox_UBUNTU_29_01_2025_19_33_10.p'),
-(14, 'camara', 'Boubacar', 'boubs', 'ca2cd2bcc63c4d7c8725577442073dde', 'repprofile/Capture d’écran (16).png'),
-(15, 'gueye', 'mouhamed', 'jinwoo', 'd6a6bc0db10694a2d90e3a69648f3a03', 'repprofile/Capture d’écran (28).png'),
-(16, 'sow', 'amadou', 'baby', '0b180078d994cb2b5ed89d7ce8e7eea2', 'repprofile/Capture d’écran (20).png'),
-(17, 'Ndoye', 'dame', 'devops', 'd6a6bc0db10694a2d90e3a69648f3a03', 'repprofile/VirtualBox_UBUNTU_29_01_2025_18_14_39.p');
+(3, 'sow', 'idriss', 'informaticien', '63c5902ca4fd118ae5353ecd89df57c6', 'repprofile/OIP.jpeg'),
+(8, 'diallo', 'moussa', 'groupe', 'e7247759c1633c0f9f1485f3690294a9', 'repprofile/OIP (4).jpeg'),
+(9, 'gueye', 'mame cheikh', 'Shota', 'e7247759c1633c0f9f1485f3690294a9', 'repprofile/OIP (1).jpeg'),
+(11, 'sarr', 'fatou', 'tifa', '5d41402abc4b2a76b9719d911017c592', 'repprofile/OIP (3).jpeg'),
+(12, 'ndiaye', 'mohamed', 'mhd', '721a9b52bfceacc503c056e3b9b93cfa', 'repprofile/WhatsApp Image 2024-11-21 à 00.23.49_be');
 
 --
 -- Index pour les tables déchargées
@@ -70,7 +65,7 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

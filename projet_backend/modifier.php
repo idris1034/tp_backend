@@ -67,7 +67,7 @@
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
             ?>
-            <form action="modifier.php" method="post">
+            <form action="modifier.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                 <label for="nom">Nom:</label>
                 <input type="text" name="nom" value="<?php echo $row['nom']; ?>">
@@ -82,7 +82,7 @@
                 <input type="password" name="password" value="<?php echo $row['password']; ?>">
                 <br>
                 <label for="profile">Profile</label>
-                <input type="text" name="profile" value="<?php echo $row['profile']; ?>">
+                <input type="file" name="profile" value="<?php echo $row['profile']; ?>">
                 <br>
                 <input type="submit" value="Modifier">
             </form>
@@ -97,12 +97,14 @@
         $prenom = $_POST['prenom'];
         $log = $_POST['login'];
         $passwd = $_POST['password'];
-        $profile = $_POST['profile'];
+        $profile = $_FILES['profile'];
+        move_uploaded_file($profile["tmp_name"],"repprofile/".$profile["name"]);
+        $pro="repprofile/".$profile["name"];
         $conn = mysqli_connect("localhost", "root", "", "backend");
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $sql = "UPDATE utilisateurs SET nom='$nom', prenom='$prenom',login='$log', password='$passwd', profile='$profile' WHERE id='$id_utilisateur'";
+        $sql = "UPDATE utilisateurs SET nom='$nom', prenom='$prenom',login='$log', password='$passwd', profile='$pro' WHERE id='$id_utilisateur'";
         if (mysqli_query($conn, $sql)) {
            
             header("location: admin.php");
