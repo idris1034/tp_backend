@@ -51,6 +51,11 @@
     </style>
 <body>
     <?php
+    session_start();
+    if (!isset($_SESSION['logged_in'])) {
+        header("Location: connection.php");
+        exit();
+    }
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
         $conn = mysqli_connect("localhost", "root", "", "backend");

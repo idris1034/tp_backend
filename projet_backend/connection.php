@@ -95,6 +95,7 @@
         <input type="submit" value="Connexion" id="in3">
     </form>
     <?php
+        session_start();
         if(isset($_POST["login"],$_POST["password"])){
             $login=$_POST["login"];
             $password=$_POST["password"];
@@ -102,6 +103,7 @@
                 echo "veuillez remplir tous les champs";
             }
             elseif($login=="admin" && $password=="admin"){
+                $_SESSION['logged_in'] = true;
                 header("location:admin.php");
             }
             else{
