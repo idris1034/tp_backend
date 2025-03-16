@@ -98,12 +98,22 @@
         $log = $_POST['login'];
         $passwd = $_POST['password'];
         $profile = $_FILES['profile'];
-        move_uploaded_file($profile["tmp_name"],"repprofile/".$profile["name"]);
-        $pro="repprofile/".$profile["name"];
+       
         $conn = mysqli_connect("localhost", "root", "", "backend");
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
+        if (!empty($profile['name'])) {
+            move_uploaded_file($profile["tmp_name"], "repprofile/" . $profile["name"]);
+            $pro = "repprofile/" . $profile["name"];
+        } else {
+           
+            $sql = "SELECT profile FROM utilisateurs WHERE id='$id_utilisateur'";
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($result);
+            $pro = $row['profile'];
+        }
+        
         $sql = "UPDATE utilisateurs SET nom='$nom', prenom='$prenom',login='$log', password='$passwd', profile='$pro' WHERE id='$id_utilisateur'";
         if (mysqli_query($conn, $sql)) {
            
