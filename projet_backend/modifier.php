@@ -82,7 +82,7 @@
                 <input type="password" name="password" value="<?php echo $row['password']; ?>">
                 <br>
                 <label for="profile">Profile</label>
-                <input type="file" name="profile" value="<?php echo $row['profile']; ?>">
+                <input type="file" name="profile">
                 <br>
                 <input type="submit" value="Modifier">
             </form>
